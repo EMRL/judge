@@ -13,9 +13,6 @@ Options:
   -f, --female           Detect names that are best-guess female
   -m, --male             Detect names that are best-guess male
   -o, --other            Detect names that appear to be neither female or male
-  -M, --merged           First and last name are in the same field
-  -q, --quoted           First name is quoted
-  -Q, --quoted-merged    First and last name are quoted in the same field
   -v, --verbose          Display verbose output
   -d. --debug            Display debug output
   -h, --help             Display this help and exit
