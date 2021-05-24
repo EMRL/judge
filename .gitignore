@@ -1,0 +1,7 @@
+/original
+/*.sublime-workspace
+/*.csv
+/*.txt
+.DS_Store
+.stir.sh
+*.bak
