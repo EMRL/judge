@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 
-# female.sh
+# process_gender.sh
 #
 ###############################################################################
 # Process for female or male names
