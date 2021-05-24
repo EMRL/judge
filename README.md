@@ -1,7 +1,7 @@
 ﻿﻿[![release](https://img.shields.io/github/v/release/emrl/judge?sort=semver)](https://github.com/EMRL/stir/releases/latest)
 [![Github issues](https://img.shields.io/github/issues/emrl/judge)](https://github.com/EMRL/stir/issues)
 
-`judge` is designed to segment data by gender, using data provided by the U.S. Census and first names. 
+`judge` is designed to segment csv files by gender, using historical first name data provided by the U.S. Census. 
 
 [Changelog](https://github.com/EMRL/judge/blob/master/CHANGELOG.md) &bull; [Known bugs](https://github.com/EMRL/judge/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
