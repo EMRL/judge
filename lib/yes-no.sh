@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 
-# yesno.sh
+# yes-no.sh
 #
 ###############################################################################
 # A simple Yes/No function
