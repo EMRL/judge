@@ -99,6 +99,7 @@ fi
 
 # Clean up old output file if it exists
 if [[ -r "${output_file}" && -f "${output_file}" ]]; then
+  # TODO: Ask user if this is okay
   rm "${output_file}"
 elif [[ -f "${output_file}" ]]; then
   echo "Fatal: ${output_file} exists"
@@ -117,6 +118,12 @@ if [[ "${too_many_switches}" == "1" ]]; then
   exit 3
 fi
 
+# But you have to do something
+if [[ -z "${label}" ]]; then
+  echo "Fatal: You must choose to parse female, male, or other"
+  exit 4
+fi
+
 # Load external functions 
 if [ -d "${lib_path}" ] ; then
   . "${lib_path}/yes-no.sh"
@@ -130,12 +137,26 @@ fi
 # Create output file
 touch "${output_file}"
 
-# echo "$value"
+# Finally
 echo "Exporting data rows identified as ${label} to ${output_file}"
 echo "Using ${format} format"
 if yes_no --default yes "Begin processing now? [Y/n] "; then
   process_gender &
   spinner $!
+fi
+
+# Check output_file file exists and is readable
+if [[ -r "${input_file}" && -f "${output_file}" ]]; then
+  line_count="$(wc -l < ${output_file})"
+  if [[ "${line_count}" -gt "0" ]]; then
+    echo "Saved ${line_count} lines to ${output_file}"
+  else
+    echo "No ${label} matches found"
+    rm "${output_file}"
+  fi
+else
+  echo "Fatal: ${input_file} does not exist or is not a readable file"
+  exit 1
 fi
 
 exit 0
